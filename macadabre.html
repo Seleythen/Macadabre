@@ -1,176 +1,211 @@
+<!-- VERSION SECTION -->
+<div class="label section"> <span> Sheet Version:0.3 </span> </div>
+
+<!-- MAIN SECTION -->
 <div class="main">
-
-<!-- LOGO SECTION -->
-  <div class="logo section"> <span> Sheet Version:1.1 </span> </div>
-
-<!-- NAME SECTION -->
-  <div class="name section">
-    <div class="section-small flex-center">
-      <label>NAME: </label>
-      <input name="attr_character_name" type="text">
-    </div>
-    <div class="section-small flex-center">
-      <label>ORDER: </label>
-      <input name="attr_order" type="text">
-    </div>
-  </div>
-
-<!-- MAIN STAT SECTION -->
-
-  <div class="stats section">
-
-    <div>
-      <button name="roll_init" type="roll" value="&{template:default} {{name=Initiative}} {{Result=[[d20]]}} &{tracker}"><span>Initiative</span></button>
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>STRENGTH</label>
-      <input name="attr_strength" type="number" value="">
-      <span name="attr_strength_bonus"></span>
-      <button name="roll_strength" type="roll" value="&{template:default} {{name=Strength}} {{Result=[[d20+(@{strength_bonus})]]}}"></button>
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>INTELLIGENCE</label>
-      <input name="attr_intelligence" type="number" value="">
-      <span name="attr_intelligence_bonus"></span>
-      <button name="roll_intelligence" type="roll" value="&{template:default} {{name=Intelligence}} {{Result=[[d20+(@{intelligence_bonus})]]}}"></button>
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>CHARM</label>
-      <input name="attr_charm" type="number" value="">
-      <span name="attr_charm_bonus"></span>
-      <button name="roll_charm" type="roll" value="&{template:default} {{name=Charm}} {{Result=[[d20+(@{charm_bonus})]]}}"></button>
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>ARCANA</label>
-      <input name="attr_arcana" type="number" value="">
-      <span name="attr_arcana_bonus"></span>
-      <button name="roll_arcana" type="roll" value="&{template:default} {{name=Arcana}} {{Result=[[d20+(@{arcana_bonus})]]}}"></button>
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>GRACE</label>
-      <input name="attr_grace" type="number" value="">
-      <span name="attr_grace_bonus"></span>
-      <button name="roll_grace" type="roll" value="&{template:default} {{name=Grace}} {{Result=[[d20+(@{grace_bonus})]]}}"></button>
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>DEFENSE</label>
-      <input name="attr_defense"       type="number" value="10">
-      <input name="attr_defense_bonus" type="number" value="">
-    </div>
-
-    <div class="stat-block flex-center">
-      <label>HIT POINTS</label>
-      <input name="attr_hit_points"     type="number" value="">
-      <input name="attr_hit_points_max" type="number" value="">
-    </div>
-  </div>
-
-<!-- RESISTANCE/WEAKNESS/ADVANTAGE SECTION -->
-  <div class="resistance section flex-center">
-    <div>
-      <label>Resistance/</label>
-      <label>Weakness</label>
-      <hr>
-      <label>Advantage/</label>
-      <label>Disadvantage</label>
-    </div>
-    <div>
-      <input name="attr_resistance1" type="text">
-      <input name="attr_resistance2" type="text">
-      <input name="attr_resistance3" type="text">
-      <input name="attr_resistance4" type="text">
-      <input name="attr_resistance5" type="text">
-    </div>
-  </div>
-
-<!-- BIO SECTION -->
-  <div class="bio section flex-center flex-middle flex-down">
-    <label>Bio</label>
-    <textarea name="attr_bio" placeholder="Bio"></textarea>
-  </div>
-
-<!-- GOLD SECTION-->
-  <div class="gold section flex-center">
-    <label>Gold:</label>
-    <input name="attr_gold" type="number" value="10">
-  </div>
-
-<!-- LOAD SECTION -->
-  <div class="load section flex-center flex-middle flex-down">
-    <label>Load</label>
-    <span>
-      <input name="attr_attack_name" type="text" placeholder="Attack/Weapon Name"> 
-      <input name="attr_attack_bonus" type="number" value=""> 
-      <input name="attr_attack_damage" type="text" value="1d6" class="small">
-      <button name="roll_attack" type="roll" value="&{template:default} {{name=@{attack_name}}} {{Attack=[[d20+(@{attack_bonus})]]}} {{Damage=[[@{attack_damage}]]}}" class ="small"></button>
-    </span>
-    <span>
-      <input name="attr_attack2_name" type="text" placeholder="Attack/Weapon Name"> 
-      <input name="attr_attack2_bonus" type="number" value=""> 
-      <input name="attr_attack2_damage" type="text" value="1d6" class="small">
-      <button name="roll_attack2" type="roll" value="&{template:default} {{name=@{attack2_name}}} {{Attack=[[d20+(@{attack2_bonus})]]}} {{Damage=[[@{attack2_damage}]]}}" class ="small"></button>
-    </span>
-    <textarea name="attr_load" placeholder="Load"></textarea>
-  </div>
-
-<!-- SKILLED WITH SECTION -->
-  <div class="skilled section flex-center">
-    <label>Skilled with: </label>
-    <input name="attr_skilled_with" type="text">
-  </div>
-
-<!-- ORDER SKILL SECTION -->
-  <div class="order-skills section flex-center flex-down">
-    <label>Order Skills</label>
-    <textarea name="attr_order_skills" placeholder="Order Skills"></textarea>
-  </div>
+      
+    <div class="test"></div>
+    
+    <!-- GENERAL SECTION -->
+    <label>Docteur:<input name="attr_character_name" type="text" value="doctor"></label>
+    <label>Genre: <input name="attr_genre" type="text" value="genre"></label>  
+    <label>Signe Particulier: <input name="attr_signe" type="text" value="signe particulier"></label>
+    
+    <!-- PROFIL SECTION -->
+    <label>Profil: <input name="attr_profil" type="text" value="profil"></label>
+    <label>Ame: <input type="number" name="attr_ame" step="any" value="0" min="0" max="6"></label>
+    <label>Corps: <input type="number" name="attr_corps" step="any" value="0" min="0" max="6"></label>
+    <label>Esprit: <input type="number" name="attr_esprit" step="any" value="0" min="0" max="6"></label>
+    <label>Capacité: <input name="attr_capaciteprofil" type="text" value="capacite"></label>
+    <label>Competence: <input name="attr_competenceprofil" type="text" value="competence"></label>
+    <label>Equipement supplémentaire: <input name="attr_equipementsup" type="text" value="equipement"></label>
+    
+    <!-- SPECIALISATION SECTION -->
+    <label>Specialisation: <input name="attr_spe" type="text" value="specialisation"></label>
+    <label>Description: <input name="attr_descriptionspe" type="text" value="description_spe"></label>
+    <label>Competence: <input name="attr_competencespe" type="text" value="competence_spe"></label>
+    <label>Equipement: <input name="attr_equipementspe" type="text" value="equipement_spe"></label>
+    
+    <!-- GOAL SECTION -->
+    <label>Aspiration: <input name="attr_aspiration" type="text" value="aspiration"></label>
+    <label>Description: <input name="attr_descriptionaspiration" type="text" value="description_aspiration"></label>
+    
+    <!-- STRESS REACTION SECTION -->
+    <label>Reaction au stress: <input name="attr_stress" type="text" value="stress"></label>
+    <label>Description: <input name="attr_reactionstress" type="text" value="reaction_stress"></label>
+    
+    <button type="action" name="act_reset" class="reset-button">Reset</button>
 
 </div>
 
-<input name="attr_strength_bonus" type="hidden" value="0">
-<input name="attr_intelligence_bonus" type="hidden" value="0">
-<input name="attr_charm_bonus" type="hidden" value="0">
-<input name="attr_arcana_bonus" type="hidden" value="0">
-<input name="attr_grace_bonus" type="hidden" value="0">
-
-
-<!-- ---------------------------SHEET WORKERS----------------- -->
-
+<!-- Script SECTION -->
 <script type="text/worker">
 
-const int = score => parseInt(score, 10) || 0;
-
-// Auto-calculates & updates 'Stat Bonus' based on changes to corresponding 'Base Stat',
-// according to the table on page 5 of the Rulebook.
-// If the Base stat is less than 1, the sheet sets the bonus to "-2"
-
-const stats = ["strength", "intelligence", "charm", "arcana", "grace"];
-stats.forEach(stat => {
-    on(`change:${stat}`, () => {
-        getAttrs([stat], values => {
-            const stat_base = int(values[stat]);
-            console.log(stat_base);
-            let stat_bonus = 0;
-            if (stat_base >= 17) stat_bonus = "+4";
-            else if (stat_base >= 16) stat_bonus = "+3";
-            else if (stat_base >= 13) stat_bonus = "+2";
-            else if (stat_base >= 9) stat_bonus = "+1";
-            else if (stat_base >= 7) stat_bonus = "0";
-            else if (stat_base >= 5) stat_bonus = "-1";
-            else if (stat_base >= 1) stat_bonus = "-2";
-            else stat_bonus = "-2";
-            
-            setAttrs({
-                [`${stat}_bonus`]: stat_bonus
+    /// Definition des listes pour la BDD
+    
+    //Docteur
+    var doctorArray = new Array("Eloise", "Misere", "Morgane", "Juliane", "Colombe", "Gisele", "Gertrude", "Josephine", "Isabelle", "Agnes",
+    "Ariane", "Aude", "Clothilde de Franchame", "Melisandre de Verminage", "Emilienne de Sinclair", "Berthe", "Bathilde", "Beatrice", "Margot", "Odile",
+    "Melusine", "louison", "Victoire", "Venance", "Monroe", "Wieldstad", "Faustus", "Mensh", "Phyllis", "De Gonzague", "Ingrid", "Alban", 
+    "Hugues", "Francois", "Eben", "Obran", "Calab", "Nerval de Nodier", "Clovis le Destrier", "Marin d'Abranville", "Gaultier", "Marcus",
+    "Jean", "Pierre", "Robert", "Tristan", "Tancrede", "Firmin", "Zacherie", "Radegonde", "Frederic", "Guy",
+    "Augustin", "Neville", "Baudry", "Enguerrand", "Jermin", "Godefroy", "Florentin", "Roland", "Pacome", "Virgile", "Robin", "Philibert", "Romanic");
+    
+    //Genre
+    var genreArray = new Array("Intersex", "Transgenre", "Homme", "Homme", "Femme", "Femme", "Helicoptere Apache");
+    
+    //Signe Particulier
+    var signeArray = new Array("Oeil crevé", "Yeux vairons", "Nez coupé, tombé à cause du froid", "Absence de dents", "Sans aucune pilosité", "Mèche blanche parmi des cheveux bruns", 
+    "Nez cassé", "Mâchoire tordue", "Verrue sur le nez", "Cicatrice sur le visage", "Lobe d’oreille manquant", "Barbe rousse tressée", 
+    "Crâne scalpé", "Visage marqué au fer rouge", "Gorge portant la marque d’une pendaison", "Longue écharpe écarlate au cou", "Langue tranchée", "Sans sourcils",
+    "Mâchoire carrée", "Nez qui coule sans arrêt", "Lèvres lippues", "Longs cheveux blancs", "Bec-de-lièvre", "Crâne tondu",
+    "Ongles pourris", "Doigt manquant", "Paume tatouée", "Mains très ridées", "Traces de brûlures sur les avant-bras", "Bras de longueurs différentes",
+    "Carrure très imposante", "Grand mais fin", "Obèse", "Voûté", "Colonne vertébrale tordue", "Jambe gauche manquante",
+    "Couperose prononcée", "Sent l’urine", "Estomac qui gargouille en permanence", "Veines apparentes", "Cheveux hirsutes", "Haleine immonde et odorante",
+    "Amputé d’un bras", "Marques de tortures dans le cou", "Avant-bras gauche déformé", "Boite fortement de la jambe droite", "Aveugle", "Respiration forte et sifflante",
+    "Strabisme", "Visage en partie brûlé", "Crache des glaires régulièrement", "Tremble des mains", "Voix étouffée", "Petit et rapide",
+    "Masque de fer fondu", "Armoiries sur le plastron", "Épée dont la garde est une gueule de dragon", "Porte une besace tâchée de sang", "Paire de bottes en fourrure sentant l’humidité", "Voix aiguë",
+    "Parle essentiellement avec des verbes", "Parle de lui-même à la troisième personne", "Ricane sans cesse", "Bégaye", "Tousse beaucoup");
+    
+    /// passage profil
+    //Profil
+    var profilArray = new Array("Cobbaye porteur sain", "Etudiant à l'accadémie de Valorieux", "Professeur à l'académie de Valorieux", "Expert détaché", "Indépendant itinérant");
+    
+    //statistique
+    var ameArray = new Array("3", "5", "4", "3", "4");
+    var corpsArray = new Array("6", "4", "4", "4", "4");
+    var espritArray = new Array("3", "3", "4", "5", "4");
+    
+    //capacité profil
+    var capaciteprofilArray = new Array("Particulièrement résistant, reste en vie à 0 point de Corps et meurt à -1 (une fois par partie). Ne peut se transformer a cause de la malemort mais peux contaminer quiconque il touche",
+    "Peut poser 1D6 questions par partie (réponse fermée où la Comtesse ne peut répondre que par oui ou non)",
+    "Peut sacrifier 1 point de Corps pour obtenir une réussite, une fois par partie",
+    "Particulièrement sûr de lui, peut ignorer une Réaction au stress, une fois partie",
+    "Une fois par partie, peut décider de changer l’issue d’un combat que la Comtesse vient de décrire (à l’exception du combat final)");
+    
+    var competenceprofilArray = new Array("Survie", "Lire & écrire, Observation, Connaissances théoriques médicales", "Lire & écrire, Baratinage, Connaissances pratiques médicales",
+    "Lire & écrire, Sait tout ou presque, Connaissances pratiques médicales", "Débrouillardise, Connaissances médicales");
+    
+    var equipementsupArray = new Array("Strictement rien", "Grimoires vierges, Plume et encrier", "Carnet de notes, Plume et encrier", "Encyclopédies", "Rapière");
+    
+    /// passage spécialisation
+    //spécialisation
+    var specialisationArray = new Array("Pieu", "Hypnotiseur", "Maitre-animal", "Practicien", "Chimiste", "Drogué");
+    
+    //description specialisation
+    var descriptionspeArray = new Array("Permet à une personne (lui ou quelqu’un d’autre) de regagner l’intégralité de ses points de Corps, une fois par partie",
+    "Permet à une personne (lui ou quelqu’un d’autre) de permuter définitivement ses niveaux de Caractéristiques en cours, une fois par partie",
+    "Peut appeler ses animaux dressés (chiens, corbeaux, rats, au choix à la création) pour l’aider durant une scène. L’ensemble des animaux possède 4 points à répartir entre Corps et Esprit",
+    "Habile de ses mains, une fois par partie, capable d’amputer sans tuer une personne qui vient d’être contaminée (provoquant la perte de 1 point de Corps définitive mais évacuant tout risque d’infection)",
+    "Une fois par partie, au lieu de subir une blessure, peut sortir de sa poche une préparation chimique capable de lui sauver la vie pour ce tour. Au choix : préparation à base de térébenthine [hautement inflammable], fumigène ou à base de venin [incapacitante/paralysante pour la scène]",
+    "Toujours un peu perdu dans ses pensées et ses rêveries, peut totalement ignorer une Réaction au stress une fois par partie");
+    
+    //competence de spécialisation
+    var competencespeArray = new Array("Connaissances religieuses, Prières",
+    "Résistance à la domination mentale, Psychologie",
+    "Connaissances des animaux, Dressage",
+    "Chirurgie médiévale, Gestes précis",
+    "Habile, Connaissances chimiques",
+    "Résistance aux drogues, Connaissances des herbacées");
+    
+    //equipement de specialisation
+    var equipementspeArray = new Array("Bible de Solaria, Chapelet, Cruciphix, Fouet épineux",
+    "Pendule",
+    "Nourriture (pour animaux), Sifflet (pour appeler le ou les animaux)",
+    "Outils propres, Bandages, Désinfectants",
+    "Quelques potions prêtes à jeter (lancer 1D6 à chaque lancer. Si le résultat est supérieur à l’Esprit, le personnage a oublié d’en préparer davantage), Outils de chimie, Tubes à essai, Alambiques, Charette de transport",
+    "Pharmacopée, Mandragore, Matériel pour décoctions");
+    
+    ///passage aspiration
+    //aspiration
+    var aspirationArray = new Array("Ego", "Désir de mort", "Sapience", "Challenge", "Humanité", "Dette");
+    
+    //description aspiration
+    var descriptionaspirationArray = new Array("Le personnage a subi une humiliation qu’il entend laver en agissant au sein de la brigade pour prouver sa valeur",
+    "Le personnage est blasé, dépressif, a subi un drame impossible à supporter et va au-devant du danger sans se soucier de sa vie",
+    "Le personnage cherche à assouvir ses connaissances, à en savoir toujours plus, à être dépositaire de secrets jusqu’alors irrésolus",
+    "Le personnage aime se mesurer au danger, défier ses peurs et affronter des adversaires",
+    "Le personnage veut secourir autant de civils que possible, aider les gens dans le besoin et tenter d’apporter la paix",
+    "Le personnage a une dette à payer, doit survivre pour rembourser des frais ou mettre ses proches à l’abri du besoin");
+    
+    ///passage réaction au stress
+    //reaction au stress
+    var stressArray = new Array("Crohn", "Tremblotant", "Lache", "Charlatant", "Hystérique", "Masochiste");
+    
+    //description stress
+    var reactionstressArray = new Array("Le personnage se défèque dessus et utilise sa Caractéristique Corps pour tout le reste de la scène en lieu et place de l’Esprit",
+    "Le personnage se met à trembler et relance une fois chaque jet de dés réussi pour toute la durée de la scène",
+    "Le personnage fuit immédiatement la scène, et part se cacher pour toute la durée de la scène",
+    "Contrairement à ce qui est indiqué sur sa feuille de Docteur, le personnage ne possède aucune des Compétences indiquées et ne peut donc y recourir pour toute la durée de la scène",
+    "Le personnage hallucine et n’est pas capable de faire la différence entre ennemis et alliés pour toute la durée de la scène. Après chaque action, effectue un jet d’Esprit, si raté, l’action est différente de celle souhaitée (ciblait la mauvaise personne)",
+    "Le personnage se mutile et perd 1 point de Corps immédiatement (meurt, suicidé, si ces points de Corps tombent à 0)");
+       
+    // fonctionelle  
+    //selection des attributs du personnage de manière aléatoire
+    on('clicked:reset', () => {
+        
+        //General
+        let Docteur = doctorArray[Math.floor(Math.random() * doctorArray.length)];
+        let Genre = genreArray[Math.floor(Math.random() * genreArray.length)];
+        let Signe = signeArray[Math.floor(Math.random() * signeArray.length)];
+        
+        //profil
+        let profil_var = Math.floor(Math.random() * profilArray.length); //genere un indice aleatoire utilisé dans l'ensemble du profil
+        
+        let Profil = profilArray[profil_var];
+        let Ame = ameArray[profil_var];
+        let Corps = corpsArray[profil_var];
+        let Esprit = espritArray[profil_var];
+        let Capaciteprofil = capaciteprofilArray[profil_var];
+        let Competenceprofil = competenceprofilArray[profil_var];
+        let Equipementsup = equipementsupArray[profil_var];
+        
+        //specialisation
+        let spe_var = Math.floor(Math.random() * specialisationArray.length); //genere un indice aleatoire utilisé dans l'ensemble de la spécialisation
+        
+        let Spe = specialisationArray[spe_var];
+        let Descriptionspe = descriptionspeArray[spe_var];
+        let Competencespe = competencespeArray[spe_var];
+        let Equipementspe = equipementspeArray[spe_var];
+        
+        //aspiration
+        let aspiration_var = Math.floor(Math.random() * aspirationArray.length); //genere un indice aleatoire utilisé dans l'ensemble de l'aspiration
+        
+        let Aspiration = aspirationArray[aspiration_var];
+        let Descriptionaspiration = descriptionaspirationArray[aspiration_var];
+        
+        //stress
+        let stress_var = Math.floor(Math.random() * stressArray.length); //genere un indice aleatoire utilisé dans l'ensemble du stress
+        
+        let Stress = stressArray[stress_var];
+        let Reactionstress = reactionstressArray[stress_var];
+        
+        //modification des attributs
+        setAttrs({
+            //general
+                character_name: Docteur,
+                genre: Genre,
+                signe: Signe,
+            //profil
+                profil: Profil,
+                ame: Ame,
+                corps: Corps,
+                esprit: Esprit,
+                capaciteprofil: Capaciteprofil,
+                competenceprofil: Competenceprofil,
+                equipementsup: Equipementsup,
+            //specialisation
+                spe: Spe,
+                descriptionspe: Descriptionspe,
+                competencespe: Competencespe,
+                equipementspe: Equipementspe,
+            //aspiration
+                aspiration: Aspiration,
+                descriptionaspiration: Descriptionaspiration,
+            //stress
+                stress: Stress,
+                reactionstress: Reactionstress
             });
         });
-    });
-});
-
+    
 </script>
